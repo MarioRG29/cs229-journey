@@ -1,0 +1,12 @@
+# requirements.txt — entorno básico (pip) para CS229
+numpy>=1.26
+pandas>=2.2
+scipy>=1.13
+scikit-learn>=1.5
+matplotlib>=3.9
+jupyterlab>=4.2
+ipykernel>=6.29
+black>=24.8
+ruff>=0.6
+pre-commit>=3.8
+nbstripout>=0.6
