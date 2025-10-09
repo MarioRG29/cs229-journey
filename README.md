@@ -6,7 +6,7 @@ Este repositorio documenta mi recorrido personal aprendiendo *Machine Learning* 
 
 - `notes/`: apuntes **propios**, resúmenes y derivaciones. *No* subo PDFs ni notas oficiales; los enlazo en `references/`.
 - `psets_theory/`: resoluciones **propias** de los problem sets teóricos.
-- `practical/`: tareas/programming assignments y notebooks asociados (cada ejercicio en su carpeta).
+- `problem-sets/`: tareas/programming assignments y notebooks asociados.
 - `notebooks/`: notebooks exploratorios adicionales.
 - `utils/`: helpers reutilizables.
 - `data/`, `outputs/`, `models/`: carpetas ignoradas para datasets/resultados/modelos.
