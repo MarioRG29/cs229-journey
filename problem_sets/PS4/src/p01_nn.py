@@ -43,6 +43,7 @@ def backward_softmax(x, grad_outputs):
     """
 
     # *** START CODE HERE ***
+    return forward_softmax(x) - (grad_outputs != 0).astype(int)
     # *** END CODE HERE ***
 
 
@@ -75,6 +76,8 @@ def backward_relu(x, grad_outputs):
     """
 
     # *** START CODE HERE ***
+    grad_outputs[x <= 0] = 0
+    return grad_outputs
     # *** END CODE HERE ***
 
 

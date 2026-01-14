@@ -118,6 +118,8 @@ def run_semi_supervised_em(x, x_tilde, z, w, phi, mu, sigma):
     # See below for explanation of the convergence criterion
     it = 0
     ll = prev_ll = None
+    m, n = x.shape
+    _, k = w.shape
     while it < max_iter and (prev_ll is None or np.abs(ll - prev_ll) >= eps):
         pass  # Just a placeholder for the starter code
         # *** START CODE HERE ***
@@ -127,6 +129,13 @@ def run_semi_supervised_em(x, x_tilde, z, w, phi, mu, sigma):
         # Hint: Make sure to include alpha in your calculation of ll.
         # Hint: For debugging, recall part (a). We showed that ll should be monotonically increasing.
         # *** END CODE HERE ***
+        for j in range(k):
+            suma = 0
+            for i in range(m):
+                numerator = 1/((2*np.pi)**(n/2) * np.linalg.det(sigma[j])**(n/2)) * np.exp(-0.5*(x[i] - mu[j]).T@np.linalg.inv(sigma[j])@(x[i]-mu[j]))*phi[j]
+                denominator = 1/((2*np.pi)**(n/2) * np.linalg.det(sigma[j])**(n/2)) * np.exp(-0.5*(x[i] - mu[j]).T@np.linalg.inv(sigma[j])@(x[i]-mu[j]))*phi[j]
+                suma += denominator
+            w[i, j] =  numerator/denominator     
 
     return w
 
